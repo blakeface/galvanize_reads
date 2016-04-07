@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('cover_url', 5000);
   })
   .createTable('authors', function ( table ){
-    table.increments();
+    table.increments('authors_id');
     table.string('first');
     table.string('last');
     table.string('bio', 5000);
@@ -20,6 +20,6 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return knex.schema
-  .dropTable('books')
   .dropTable('authors')
+  .dropTable('books')
 };

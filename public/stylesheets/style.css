@@ -25,7 +25,7 @@ header img {
   justify-content: space-around;
 }
 
-.books, .authors {
+.books, .authors, {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@ header img {
   transform: rotate(270deg);
 }
 
-.author_heading {
+.author_heading, .book_heading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,7 +76,7 @@ header img {
   border: 1px solid black;
 }
 
-.author_info {
+.author_info, .book_info {
   width: 70%;
 }
 
@@ -84,17 +84,35 @@ header img {
   margin: 0px;
 }
 
-.author_container {
+.author_container, .book_container, {
   padding: 30px;
   width: 80vw;
 }
 
-.individual_author  {
+.individual_author, .individual_book {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.individual_book img {
+  height: 250px;
+  width: auto;
 }
 
 .individual_author img {
-  height: 50%;
+  height: 200px;
+  width: auto;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+
+}
+
+.edit input {
+  margin-bottom: 15px;
 }

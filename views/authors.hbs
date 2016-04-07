@@ -1,28 +1,42 @@
+<div class="sidebar">
+  <div class="sidebar_authors">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mark_twain2.JPG" alt="mark twain" />
+    <h3><a href="/authors">Authors</a></h3>
+  </div>
+  <div class="sidebar_books">
+    <img src="http://www.auromere.com/img-books.jpg" alt="picture of book" />
+    <h3><a href="/books">Books</a></h3>
+  </div>
+</div>
+
 <div class="author_container">
   {{#author}}
   <div class="individual_author">
-    <img src="" alt="pic of author" />
+    <img src="{{img_url}}" alt="pic of author" />
 
     <div class="author_info">
       <div class="author_heading">
-        <h3>Name</h3>
+        <h3><a href="/authors/{{authors_id}}">{{first}} {{last}}</a></h3>
         <div class="author_buttons">
-          <input type="button" value="edit">
-          <input type="button" value="remove">
+          <form action="/authors/{{authors_id}}/edit" method="post">
+            <input type="submit" value="edit">
+          </form>
+          <form action="/authors/{{authors_id}}/delete" method="post">
+            <input type="submit" value="remove">
+          </form>
         </div>
       </div>
-      <p>description</p>
+      <p>{{bio}}</p>
       <h5>Books</h5>
       <div class="author_book_container">
         <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+          <li>{{title}}</li>
         </ul>
       </div>
     </div>
 
   </div>
+  <hr>
   {{/author}}
 
 </div>

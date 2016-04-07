@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
       genre: 'JavaScript',
       description: "No matter how much experience you have with JavaScript, odds are you donäó»t fully understand the language. As part of the \"You Don't Know JS\" series, this compact guide focuses on new features available in ECMAScript 6 (ES6\), the latest version of the standard upon which JavaScript is built.",
       cover_url: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/es6_and_beyond.jpg'
-    }),
+    })
     knex('authors').del(),
     knex('authors').insert({
       first: 'Alex',
