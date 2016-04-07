@@ -6,3 +6,62 @@ body {
 a {
   color: #00B7FF;
 }
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+header img {
+  height: 50px;
+  width: 50px;
+}
+
+.container {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.books, .authors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books img, .authors img {
+  width: 300px;
+  height: 300px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 100px;
+  justify-content: space-between;
+  float: left;
+  margin-right: 15px;
+}
+
+.sidebar_authors, .sidebar_books {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sidebar_authors {
+  background: rgb(128, 128, 128);
+}
+
+.sidebar_authors img, .sidebar_books img {
+  width: 70px;
+}
+
+.sidebar_authors h3, .sidebar_books h3 {
+  transform: rotate(270deg);
+}
