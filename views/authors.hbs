@@ -18,12 +18,12 @@
       <div class="author_heading">
         <h3><a href="/authors/{{authors_id}}">{{first}} {{last}}</a></h3>
         <div class="author_buttons">
-          <form action="/authors/{{authors_id}}/edit" method="post">
-            <input type="submit" value="edit">
-          </form>
-          <form action="/authors/{{authors_id}}/delete" method="post">
-            <input type="submit" value="remove">
-          </form>
+          <a href="/authors/{{authors_id}}/edit">
+            <button>Edit</button>
+          </a>
+          <a href="/authors/{{authors_id}}/delete">
+            <button>Delete</button>
+          </a>
         </div>
       </div>
       <p>{{bio}}</p>

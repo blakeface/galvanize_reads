@@ -1,0 +1,33 @@
+<div class="sidebar">
+  <div class="sidebar_authors">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mark_twain2.JPG" alt="mark twain" />
+    <h3><a href="/authors">Authors</a></h3>
+  </div>
+  <div class="sidebar_books">
+    <img src="http://www.auromere.com/img-books.jpg" alt="picture of book" />
+    <h3><a href="/books">Books</a></h3>
+  </div>
+</div>
+
+{{#book}}
+<div class="edit">
+  <form class='edit' action="index.html" method="post">
+    <label>Title</label>
+    <input type="text" name="title" value="{{title}}">
+    <label>Genre</label>
+    <input type="text" name="genre" value="{{genre}}">
+    <label>Cover URL</label>
+    <input type="text" name="cover_url" value="{{cover_url}}">
+    <label>Description</label>
+    <textarea name="name" rows="8" cols="40">{{description}}</textarea>
+    <label>Author</label>
+    <div class="author_book_container">
+      <h3>{{first}}{{last}}</h3>
+      <form action="/addbook" method="post">
+        <input type="submit" value="Add Book">
+      </form>
+    </div>
+    <input type="submit" value="Edit Book">
+  </form>
+</div>
+{{/book}}

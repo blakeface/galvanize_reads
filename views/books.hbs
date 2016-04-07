@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <div class="sidebar_authors">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mark_twain2.JPG" alt="mark twain" />
+    <h3><a href="/authors">Authors</a></h3>
+  </div>
+  <div class="sidebar_books">
+    <img src="http://www.auromere.com/img-books.jpg" alt="picture of book" />
+    <h3><a href="/books">Books</a></h3>
+  </div>
+</div>
+
+<div class="book_container">
+
+  {{#books}}
+  <div class="individual_book">
+    <img src="{{cover_url}}" alt="pic of book cover" />
+
+    <div class="book_info">
+      <div class="book_heading">
+        <div class="book_name">
+          <h3><a href="books/{{id}}">{{title}}</a></h3>
+          <h4>By {{first}} {{last}}</h4>
+        </div>
+        <div class="book_buttons">
+          <a href="/books/{{book_id}}/edit">
+            <button>Edit</button>
+          </a>
+          <a href="/books/{{book_id}}/delete">
+            <button>Delete</button>
+          </a>
+        </div>
+      </div>
+      <h5>genre</h5>
+      <p>{{description}}</p>
+    </div>
+
+  </div>
+  <hr>
+  {{/books}}
+
+</div>

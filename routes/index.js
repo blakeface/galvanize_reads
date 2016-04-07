@@ -53,4 +53,12 @@ router.get('/books/:id', function(req, res, next) {
   })
 });
 
+router.get('/books/:id/edit', function(req, res, next) {
+  knex('books')
+  .where({id: req.params.id})
+  .then(function ( results ){
+    res.render('edit-book', { book: results });
+  })
+});
+
 module.exports = router;
