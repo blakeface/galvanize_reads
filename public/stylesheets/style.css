@@ -3,8 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.page_body{
+  display: flex;
+  flex-direction: row;
 }
 
 header {
@@ -39,9 +40,8 @@ header img {
   display: flex;
   flex-direction: column;
   height: 70vh;
-  width: 100px;
+  width: 10vw;
   justify-content: space-between;
-  float: left;
   margin-right: 15px;
 }
 
@@ -64,4 +64,37 @@ header img {
 
 .sidebar_authors h3, .sidebar_books h3 {
   transform: rotate(270deg);
+}
+
+.author_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.author_book_container  {
+  border: 1px solid black;
+}
+
+.author_info {
+  width: 70%;
+}
+
+.author_info h5 {
+  margin: 0px;
+}
+
+.author_container {
+  padding: 30px;
+  width: 80vw;
+}
+
+.individual_author  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.individual_author img {
+  height: 50%;
 }
