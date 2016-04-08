@@ -85,6 +85,10 @@ header img {
 
 .author_book_container  {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
 }
 
 .author_info, .book_info {
@@ -129,7 +133,6 @@ header img {
   display: flex;
   flex-direction: column;
   width: 80vw;
-
 }
 
 .edit input {

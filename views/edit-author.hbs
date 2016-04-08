@@ -11,7 +11,7 @@
 
 {{#author}}
 <div class="edit">
-  <form class='edit' action="index.html" method="post">
+  <form class='edit' action="/authors/{{id}}" method="post">
     <label>First Name</label>
     <input type="text" name="first" value="{{first}}">
     <label>Last Name</label>
@@ -19,20 +19,18 @@
     <label>Portrait URL</label>
     <input type="text" name="img_url" value="{{img_url}}">
     <label>Biography</label>
-    <textarea name="name" rows="8" cols="40">{{bio}}</textarea>
+    <textarea name="bio" rows="6" value={{bio}}>{{bio}}</textarea>
     <label>Books</label>
     <div class="author_book_container">
+
       {{#books}}
-      <div class="book_line">
-        <h4>{{title}}</h4>
-        <form action="/deletebook" method="post">
-          <input type="submit" value="Delete Book">
-        </form>
-      </div>
+      <label>
+        <input type="checkbox" name=checkbox value={{book_id}}"">
+        <a href="/books/{{book_id}}">
+          {{title}}
+        </a>
+      </label>
       {{/books}}
-      <form action="/addbook" method="post">
-        <input type="submit" value="Add Book">
-      </form>
 
     </div>
     <input type="submit" value="Edit Author">
