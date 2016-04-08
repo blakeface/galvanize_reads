@@ -16,14 +16,15 @@ exports.up = function(knex, Promise) {
     table.string('img_url', 1000);
   })
   .createTable('authors_books', function ( table ){
-    table.integer('book_id').references('id').inTable('books');
-    table.integer('author_id').references('id').inTable('authors');
+    table.increments();
+    table.integer('book_id').unsigned().references('id').inTable('books');
+    table.integer('author_id').unsigned().references('id').inTable('authors');
   })
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema
+  .dropTable('authors_books')
   .dropTable('authors')
   .dropTable('books')
-  .dropTable('authors_books')
 };
