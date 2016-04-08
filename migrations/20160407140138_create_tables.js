@@ -9,12 +9,15 @@ exports.up = function(knex, Promise) {
     table.string('cover_url', 5000);
   })
   .createTable('authors', function ( table ){
-    table.increments('authors_id');
+    table.increments();
     table.string('first');
     table.string('last');
     table.string('bio', 5000);
     table.string('img_url', 1000);
+  })
+  .createTable('authors_books', function ( table ){
     table.integer('book_id').references('id').inTable('books');
+    table.integer('author_id').references('id').inTable('authors');
   })
 };
 
@@ -22,4 +25,5 @@ exports.down = function(knex, Promise) {
   return knex.schema
   .dropTable('authors')
   .dropTable('books')
+  .dropTable('authors_books')
 };

@@ -25,15 +25,21 @@ header img {
   justify-content: space-around;
 }
 
-.books, .authors, {
+.index_columns a {
+  width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.books img, .authors img {
+.index_columns img {
   width: 300px;
   height: 300px;
+}
+
+.index_columns a {
+  color: gray;
+  text-decoration: none;
 }
 
 .sidebar {
@@ -54,12 +60,17 @@ header img {
   align-items: center;
 }
 
+.sidebar a {
+  text-decoration: none;
+  color: rgb(29, 48, 89);
+}
+
 .sidebar_authors {
   background: rgb(128, 128, 128);
 }
 
 .sidebar_authors img, .sidebar_books img {
-  width: 70px;
+  width: 80%;
 }
 
 .sidebar_authors h3, .sidebar_books h3 {
@@ -78,6 +89,7 @@ header img {
 
 .author_info, .book_info {
   width: 70%;
+  padding: 15px;
 }
 
 .author_info h5 {
@@ -104,6 +116,13 @@ header img {
 .individual_author img {
   height: 200px;
   width: auto;
+}
+
+.author_li {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
 }
 
 .edit {

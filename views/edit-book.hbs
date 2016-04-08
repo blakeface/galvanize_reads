@@ -1,17 +1,17 @@
 <div class="sidebar">
   <div class="sidebar_authors">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mark_twain2.JPG" alt="mark twain" />
+    <img src="../../images/boxer.jpg" alt="boxer" />
     <h3><a href="/authors">Authors</a></h3>
   </div>
   <div class="sidebar_books">
-    <img src="http://www.auromere.com/img-books.jpg" alt="picture of book" />
+    <img src="../../images/books.jpg" alt="bookstack" />
     <h3><a href="/books">Books</a></h3>
   </div>
 </div>
 
 {{#book}}
 <div class="edit">
-  <form class='edit' action="index.html" method="post">
+  <form class='edit' action="/books/{{book_id}}/update" method="post">
     <label>Title</label>
     <input type="text" name="title" value="{{title}}">
     <label>Genre</label>
@@ -21,11 +21,16 @@
     <label>Description</label>
     <textarea name="name" rows="8" cols="40">{{description}}</textarea>
     <label>Author</label>
-    <div class="author_book_container">
-      <h3>{{first}}{{last}}</h3>
-      <form action="/addbook" method="post">
-        <input type="submit" value="Add Book">
+    <div class="author_li">
+      <h3>{{first}} {{last}}</h3>
+      <form class=""action="index.html" method="post">
+        <input type="button" value="Delete Author">
       </form>
+    </div>
+    <form action="/addbook" method="post">
+      <input type="submit" value="Add Author">
+    </form>
+    <div class="author_book_container">
     </div>
     <input type="submit" value="Edit Book">
   </form>
