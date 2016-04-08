@@ -11,7 +11,7 @@
 
 {{#book}}
 <div class="edit">
-  <form class='edit' action="/books/{{book_id}}/update" method="post">
+  <form class='edit' action="/books/{{id}}" method="post">
     <label>Title</label>
     <input type="text" name="title" value="{{title}}">
     <label>Genre</label>
@@ -19,21 +19,21 @@
     <label>Cover URL</label>
     <input type="text" name="cover_url" value="{{cover_url}}">
     <label>Description</label>
-    <textarea name="name" rows="8" cols="40">{{description}}</textarea>
+    <textarea name="description" rows="6" value="{{description}}">{{description}}</textarea>
     <label>Author</label>
-    <div class="author_li">
+    <!-- <div class="author_li">
       {{#authors}}
       <h3>{{first}} {{last}}</h3>
       <form class=""action="index.html" method="post">
         <input type="button" value="Delete Author">
       </form>
       {{/authors}}
-    </div>
-    <form action="/addbook" method="post">
+    </div> -->
+    <!-- <form action="/addbook" method="post">
       <input type="submit" value="Add Author">
     </form>
     <div class="author_book_container">
-    </div>
+    </div> -->
     <input type="submit" value="Edit Book">
   </form>
 </div>

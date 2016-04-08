@@ -40,6 +40,21 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
+router.post('/:id', function ( req, res, next ){
+  console.log(req.body.cover_url);
+  knex('books').where({id: req.params.id})
+  .innerJoin('authors_books', 'books.id', 'authors_books.book_id')
+  .innerJoin('authors', 'authors.id', 'authors_books.author_id')
+  .update({
+    title: req.body.title,
+    genre: req.body.genre,
+    cover_url: req.body.cover_url,
+    description: req.body.description
+  }).then(function ( results ){
+    res.redirect('/books');
+  })
+});
+
 router.get('/:id/edit', function(req, res, next) {
   knex('books').where({id: req.params.id})
   .reduce(function ( result, book ){

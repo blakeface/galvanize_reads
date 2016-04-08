@@ -59,8 +59,6 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 router.post('/:id', function(req, res, next) {
-  var cbox = document.querySelectorAll('input:checked');
-  console.log(cbox);
   knex('authors').where({id: req.params.id})
   .innerJoin('authors_books', 'authors.id', 'authors_books.author_id')
   .innerJoin('books', 'books.id', 'authors_books.book_id')
