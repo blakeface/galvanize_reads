@@ -1,7 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0px;
-  background: rgba(0, 0, 0, .03);
+  background: white;
 }
 
 header {
@@ -10,6 +10,42 @@ header {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
+}
+
+.sidebar {
+  position: fixed;
+  margin-left: 15px;
+  float: left;
+  width: 180px;
+  height: 80vh;
+}
+
+.sidebar img {
+  width: 150px;
+}
+
+.sidebar h3 {
+  transform: rotate(270deg);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar_books, .sidebar_authors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 52%;
+}
+
+.sidebar_authors {
+  background: #F68F1E;
+}
+
+.sidebar_books {
+  background: #87E2A9;
 }
 
 header a {
@@ -84,6 +120,8 @@ header img {
   border: 1px solid black;
   padding: 20px;
   border-radius: 25px;
+  box-shadow: 3px 3px black;
+  background: rgba(0, 0, 0, .03);
 }
 
 .individual_book img {
@@ -116,4 +154,13 @@ header img {
 
 .edit input {
   margin-bottom: 15px;
+}
+
+.addbutton {
+  margin-bottom: 15px;
+}
+
+.addbutton a {
+  text-decoration: none;
+  color: black;
 }

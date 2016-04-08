@@ -1,42 +1,54 @@
-<div class="">
+<div class="sidebar">
+  <div class="sidebar_authors">
+    <a href="/authors">
+      <img src="../images/boxer.jpg" alt="boxer" />
+      <h3>Authors</h3>
+    </a>
+  </div>
+  <div class="sidebar_books">
+    <a href="/books">
+      <img src="../images/books.jpg" alt="bookstack" />
+      <h3>Books</h3>
+    </a>
+  </div>
 </div>
 
+<div class="author_container">
 
-  <div class="author_container">
+  <button class='addbutton' type="button" name="add">
+    <a href="/add">Add a New Author</a>
+  </button>
 
-    <button class='addbutton' type="button" name="add">
-      <a href="/add">Add a New Author</a>
-    </button>
+  {{#authors}}
+  <div class="border">
 
-    {{#authors}}
-    <div class="border">
+    <div class="individual_author">
+      <img src="{{img_url}}" alt="pic of author" />
 
-      <div class="individual_author">
-        <img src="{{img_url}}" alt="pic of author" />
+      <div class="author_info">
+        <h3><a href="/authors/{{id}}">{{first}} {{last}}</a></h3>
+        <p>{{bio}}</p>
+        <h5>Books</h5>
+        <div class="author_book_container">
+          <ul>
+            {{#books}}
+            <a href="/authors/{{author_id}}/edit">
+              <li>{{title}}</li>
+            </a>
 
-        <div class="author_info">
-          <h3><a href="/authors/{{id}}">{{first}} {{last}}</a></h3>
-          <p>{{bio}}</p>
-          <h5>Books</h5>
-          <div class="author_book_container">
-            <ul>
-              {{#books}}
-              <a href="/authors/{{author_id}}/edit">
-                <li>{{title}}</li>
-              </a>
-
-              {{/books}}
-            </ul>
-          </div>
+            {{/books}}
+          </ul>
         </div>
-
-      </div>
-      <div class="author_buttons">
-        <a href="/authors/{{id}}/delete">
-          <button>Delete</button>
-        </a>
+        <a href="/authors/{{id}}/edit">Edit this Author</a>
       </div>
 
     </div>
-    {{/authors}}
+    <div class="author_buttons">
+      <a href="/authors/{{id}}/delete">
+        <button>Delete</button>
+      </a>
+    </div>
+
   </div>
+  {{/authors}}
+</div>
