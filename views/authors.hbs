@@ -1,44 +1,42 @@
-<div class="sidebar">
-  <div class="sidebar_authors">
-    <img src="../images/boxer.jpg" alt="boxer" />
-    <h3><a href="/authors">Authors</a></h3>
-  </div>
-  <div class="sidebar_books">
-    <img src="../images/books.jpg" alt="bookstack" />
-    <h3><a href="/books">Books</a></h3>
-  </div>
+<div class="">
 </div>
 
-<div class="author_container">
-  {{#authors}}
-  <div class="individual_author">
-    <img src="{{img_url}}" alt="pic of author" />
 
-    <div class="author_info">
-      <div class="author_heading">
-        <h3><a href="/authors/{{id}}">{{first}} {{last}}</a></h3>
-        <div class="author_buttons">
-          <a href="/authors/{{id}}/edit">
-            <button>Edit</button>
-          </a>
-          <a href="/authors/{{id}}/delete">
-            <button>Delete</button>
-          </a>
+  <div class="author_container">
+
+    <button class='addbutton' type="button" name="add">
+      <a href="/add">Add a New Author</a>
+    </button>
+
+    {{#authors}}
+    <div class="border">
+
+      <div class="individual_author">
+        <img src="{{img_url}}" alt="pic of author" />
+
+        <div class="author_info">
+          <h3><a href="/authors/{{id}}">{{first}} {{last}}</a></h3>
+          <p>{{bio}}</p>
+          <h5>Books</h5>
+          <div class="author_book_container">
+            <ul>
+              {{#books}}
+              <a href="/authors/{{author_id}}/edit">
+                <li>{{title}}</li>
+              </a>
+
+              {{/books}}
+            </ul>
+          </div>
         </div>
+
       </div>
-      <p>{{bio}}</p>
-      <h5>Books</h5>
-      <div class="author_book_container">
-        <ul>
-          {{#books}}
-          <li>{{title}}</li>
-          {{/books}}
-        </ul>
+      <div class="author_buttons">
+        <a href="/authors/{{id}}/delete">
+          <button>Delete</button>
+        </a>
       </div>
+
     </div>
-
+    {{/authors}}
   </div>
-  <hr>
-  {{/authors}}
-
-</div>

@@ -72,4 +72,8 @@ router.post('/:id', function(req, res, next) {
   })
 });
 
+router.get('/add', function (req, res, next){
+  res.render('edit-author')
+})
+
 module.exports = router;

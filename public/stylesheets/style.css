@@ -1,16 +1,23 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-.page_body{
-  display: flex;
-  flex-direction: row;
+  margin: 0px;
+  background: rgba(0, 0, 0, .03);
 }
 
 header {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+header a {
   display: flex;
   flex-direction: row;
+  text-decoration: none;
+  color: black;
+  align-items: center;
 }
 
 header img {
@@ -19,14 +26,22 @@ header img {
 }
 
 .container {
-  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.index_columns {
+  width: 350px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgb(180, 180, 180)
 }
 
 .index_columns a {
-  width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,57 +53,14 @@ header img {
 }
 
 .index_columns a {
-  color: gray;
+  color: rgb(150, 37, 34);
   text-decoration: none;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  height: 70vh;
-  width: 10vw;
-  justify-content: space-between;
-  margin-right: 15px;
-}
-
-.sidebar_authors, .sidebar_books {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: rgb(29, 48, 89);
-}
-
-.sidebar_authors {
-  background: rgb(128, 128, 128);
-}
-
-.sidebar_authors img, .sidebar_books img {
-  width: 80%;
-}
-
-.sidebar_authors h3, .sidebar_books h3 {
-  transform: rotate(270deg);
 }
 
 .author_heading, .book_heading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.author_book_container  {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: baseline;
 }
 
 .author_info, .book_info {
@@ -100,16 +72,18 @@ header img {
   margin: 0px;
 }
 
-.author_container, .book_container, {
+.author_container, .book_container {
   padding: 30px;
-  width: 80vw;
+  width: 70vw;
+  float: right;
 }
 
 .individual_author, .individual_book {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 25px;
 }
 
 .individual_book img {
@@ -122,6 +96,10 @@ header img {
   width: auto;
 }
 
+.border{
+  margin-bottom: 30px;
+}
+
 .author_li, .book_line {
   display: flex;
   flex-direction: row;
@@ -132,7 +110,8 @@ header img {
 .edit {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 70vw;
+  float: right;
 }
 
 .edit input {
