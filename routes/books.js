@@ -3,39 +3,23 @@ var router = express.Router();
 var knex = require('knex')(require('../knexfile')['development']);;
 
 router.get('/', function(req, res, next) {
-  var data = {};
+  knex('books').reduce(function ( result, book ){
+    return knex('authors')
+    .innerJoin('authors_books', 'authors.id', 'authors_books.author_id')
+    .where({book_id: book.id})
+    .reduce(function ( authors, author ){
+      authors.push(author);
+      return authors;
+    }, [] ).then(function ( authors ){
+      book.authors = authors;
+      result.push(book);
+      return result;
+    })
 
-  knex('authors')
-  // .innerJoin('authors', 'books.id', 'authors.book_id')
-  // .select('*').from('authors')
-  // .groupBy('book_id').having('book_id', '>', 1)
-  .then(function ( results ){
-    var uniq = [];
-    var dup = [];
-    for (var i = 0; i < results.length; i++) {
-      for (var j = 0; j < results.length; j++) {
-        if ( results[i].book_id != results[j].book_id ){
-          uniq.push(results[i].first + " " + results[i].last);
-        } else {
-          dup.push(results[i].first + " " + results[i].last);
-        }
-      }
-    };
-    // for (var i = 0; i < bookIdArr.length; i++) {
-    //   if ( bookIdArr[i + 1] != bookIdArr[i] )
-    //     uniq.push(bookIdArr[i])
-    // }
-    // console.log(uniq);
-    // console.log(nonduplicates);
+  }, []).then(function ( results ){
+    res.render('books', { books: results })
   })
-  // .then(function ( book_id ){
-  // knex('books')
-  // console.log( book_id );
-  //   .then(function ( results ){
-  //     res.render('books', { books: results });
-  //   })
-  // })
-});
+})
 
 router.get('/:id', function(req, res, next) {
   knex('books')
