@@ -22,10 +22,18 @@
     <textarea name="name" rows="8" cols="40">{{bio}}</textarea>
     <label>Books</label>
     <div class="author_book_container">
-      <h3>{{title}}</h3>
+      {{#books}}
+      <div class="book_line">
+        <h4>{{title}}</h4>
+        <form action="/deletebook" method="post">
+          <input type="submit" value="Delete Book">
+        </form>
+      </div>
+      {{/books}}
       <form action="/addbook" method="post">
         <input type="submit" value="Add Book">
       </form>
+
     </div>
     <input type="submit" value="Edit Author">
   </form>

@@ -118,7 +118,7 @@ header img {
   width: auto;
 }
 
-.author_li {
+.author_li, .book_line {
   display: flex;
   flex-direction: row;
   align-items: baseline;
