@@ -43,7 +43,7 @@ router.get('/:id/delete', function(req, res, next){
   .where({ author_id: req.params.id }).del()
   .then( function ( authors ){
     knex('authors')
-    .where({id: req.params.id}).del()
+    .where({ id: req.params.id }).del()
     .then(function (results){
       res.redirect('/authors')
     })
@@ -102,6 +102,5 @@ router.post('/:id', function(req, res, next) {
     res.redirect('/authors');
   })
 });
-
 
 module.exports = router;

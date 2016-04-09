@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="sidebar_authors">
+    <a href="/authors">
+      <img src="../../images/boxer.jpg" alt="boxer" />
+      <h3>AUTHORS</h3>
+    </a>
+  </div>
+  <div class="sidebar_books">
+    <a href="/books">
+      <img src="../../images/books.jpg" alt="bookstack" />
+      <h3>BOOKS</h3>
+    </a>
+  </div>
+</div>
+
+<div class="edit">
+  <form class='edit' action="/books/new" method="post">
+    <label>Title</label>
+    <input type="text" name="title" value="">
+    <label>Genre</label>
+    <input type="text" name="genre" value="">
+    <label>Cover URL</label>
+    <input type="text" name="cover_url" value="">
+    <label>Description</label>
+    <textarea name="description" rows="6" value=""></textarea>
+    <label>Authors</label>
+
+    <select class="" name="">
+      {{#authors}}
+      <option value="">{{first}} {{last}}</option>
+      {{/authors}}
+    </select>
+    <button>
+      <a href="/books/new">Or Add a New Author</a>
+    </button>
+
+    <input class="inputbutton" type="submit" value="Submit New Book">
+  </form>
+</div>

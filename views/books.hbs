@@ -2,44 +2,47 @@
   <div class="sidebar_authors">
     <a href="/authors">
       <img src="../images/boxer.jpg" alt="boxer" />
+      <h3>AUTHORS</h3>
     </a>
   </div>
   <div class="sidebar_books">
     <a href="/books">
       <img src="../images/books.jpg" alt="bookstack" />
+      <h3>BOOKS</h3>
     </a>
   </div>
 </div>
 
 <div class="book_container">
 
-  {{#books}}
-  <div class="individual_book">
-    <img src="{{cover_url}}" alt="pic of book cover" />
+  <button class='addbutton'>
+    <a href="/books/add">Add a New Book</a>
+  </button>
 
-    <div class="book_info">
-      <div class="book_heading">
+  <hr>
+  {{#books}}
+  <div class="border">
+
+    <div class="individual_book">
+      <img src="{{cover_url}}" alt="pic of book cover" />
+
+      <div class="book_info">
         <div class="book_name">
           <h3><a href="/books/{{id}}">{{title}}</a></h3>
           {{#authors}}
           <h4>{{first}} {{last}}</h4>
           {{/authors}}
         </div>
-        <div class="book_buttons">
-          <a href="/books/{{id}}/edit">
-            <button>Edit</button>
-          </a>
-          <a href="/books/{{book_id}}/delete">
-            <button>Delete</button>
-          </a>
-        </div>
-      </div>
-      <h5>{{genre}}</h5>
-      <p>{{description}}</p>
-    </div>
+        <h5>{{genre}}</h5>
+        <p>{{description}}</p>
+        <a href="/books/{{id}}/edit">Edit This Book</a>
 
+      </div>
+    </div>
+    <a href="/books/{{id}}/delete">
+      <button>Delete This Book</button>
+    </a>
   </div>
-  <hr>
   {{/books}}
 
 </div>

@@ -15,9 +15,38 @@ router.get('/', function(req, res, next) {
       result.push(book);
       return result;
     })
-
   }, []).then(function ( results ){
     res.render('books', { books: results })
+  })
+})
+
+router.get('/add', function(req, res, next){
+  knex('authors').then(function (results){
+    res.render('new-book', { authors: results })
+  })
+})
+
+router.post('/new', function(req, res, next){
+  knex('books').insert({
+    title: req.body.title,
+    genre: req.body.genre,
+    cover_url: req.body.cover_url,
+    description: req.body.description
+  })
+  .then(function (results){
+    res.redirect('/books')
+  })
+})
+
+router.get('/:id/delete', function(req, res, next){
+  knex('authors_books')
+  .where({ book_id: req.params.id }).del()
+  .then( function ( books ){
+    knex('books')
+    .where({id: req.params.id}).del()
+    .then(function (results){
+      res.redirect('/books')
+    })
   })
 })
 
@@ -41,7 +70,6 @@ router.get('/:id', function(req, res, next) {
 })
 
 router.post('/:id', function ( req, res, next ){
-  console.log(req.body.cover_url);
   knex('books').where({id: req.params.id})
   .innerJoin('authors_books', 'books.id', 'authors_books.book_id')
   .innerJoin('authors', 'authors.id', 'authors_books.author_id')
