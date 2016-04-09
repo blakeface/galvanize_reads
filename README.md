@@ -5,7 +5,7 @@ Deployed site:
 https://blooming-thicket-18235.herokuapp.com/
 
 Data Model:
-[data model](./data_model.jpg?raw=true "Data Model")
+[data model](./data_model.jpg)
 
 GitHub Repo:
 https://github.com/blakeface/galvanize_reads
