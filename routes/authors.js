@@ -20,6 +20,37 @@ router.get('/', function(req, res, next) {
   })
 })
 
+router.get('/add', function(req, res, next){
+  knex('books').then(function (results){
+    res.render('new-author', { books: results })
+  })
+})
+
+router.post('/new', function(req, res, next){
+  knex('authors').insert({
+    first: req.body.first,
+    last: req.body.last,
+    img_url: req.body.img_url,
+    bio: req.body.bio
+  })
+  .then(function (results){
+    res.redirect('/authors')
+  })
+})
+
+router.get('/:id/delete', function(req, res, next){
+  knex('authors_books')
+  .where({ author_id: req.params.id }).del()
+  .then( function ( authors ){
+    knex('authors')
+    .where({id: req.params.id}).del()
+    .then(function (results){
+      res.redirect('/authors')
+    })
+  })
+})
+
+
 router.get('/:id', function(req, res, next) {
   knex('authors').where({id: req.params.id})
   .reduce(function ( result, author ){
@@ -72,8 +103,5 @@ router.post('/:id', function(req, res, next) {
   })
 });
 
-router.get('/add', function (req, res, next){
-  res.render('edit-author')
-})
 
 module.exports = router;

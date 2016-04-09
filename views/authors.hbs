@@ -2,22 +2,24 @@
   <div class="sidebar_authors">
     <a href="/authors">
       <img src="../images/boxer.jpg" alt="boxer" />
-      <h3>Authors</h3>
+      <h3>AUTHORS</h3>
     </a>
   </div>
   <div class="sidebar_books">
     <a href="/books">
       <img src="../images/books.jpg" alt="bookstack" />
-      <h3>Books</h3>
+      <h3>BOOKS</h3>
     </a>
   </div>
 </div>
 
 <div class="author_container">
 
-  <button class='addbutton' type="button" name="add">
-    <a href="/add">Add a New Author</a>
+  <button class='addbutton'>
+    <a href="/authors/add">Add a New Author</a>
   </button>
+
+  <hr>
 
   {{#authors}}
   <div class="border">
@@ -26,9 +28,9 @@
       <img src="{{img_url}}" alt="pic of author" />
 
       <div class="author_info">
-        <h3><a href="/authors/{{id}}">{{first}} {{last}}</a></h3>
+        <h3><a class='name' href="/authors/{{id}}">{{first}} {{last}}</a></h3>
         <p>{{bio}}</p>
-        <h5>Books</h5>
+        <h5>Books by {{first}}</h5>
         <div class="author_book_container">
           <ul>
             {{#books}}
@@ -45,7 +47,7 @@
     </div>
     <div class="author_buttons">
       <a href="/authors/{{id}}/delete">
-        <button>Delete</button>
+        <button>Remove This Author</button>
       </a>
     </div>
 

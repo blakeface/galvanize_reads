@@ -10,6 +10,8 @@ header {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
+  font-family: frenchy;
+  font-size: 22px;
 }
 
 .sidebar {
@@ -17,15 +19,11 @@ header {
   margin-left: 15px;
   float: left;
   width: 180px;
-  height: 80vh;
+  height: 100vh;
 }
 
 .sidebar img {
   width: 150px;
-}
-
-.sidebar h3 {
-  transform: rotate(270deg);
 }
 
 .sidebar a {
@@ -33,19 +31,18 @@ header {
   color: black;
 }
 
+.sidebar h3 {
+  margin: 0px;
+  text-align: center;
+  font-family: frenchy;
+  font-size: 40px;
+}
+
 .sidebar_books, .sidebar_authors {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 52%;
-}
-
-.sidebar_authors {
-  background: #F68F1E;
-}
-
-.sidebar_books {
-  background: #87E2A9;
 }
 
 header a {
@@ -81,6 +78,8 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: frenchy;
+  font-size: 20px;
 }
 
 .index_columns img {
@@ -130,8 +129,8 @@ header img {
 }
 
 .individual_author img {
-  height: 200px;
-  width: auto;
+  max-width: 150px;
+  max-height: 200px;
 }
 
 .border{
@@ -150,10 +149,20 @@ header img {
   flex-direction: column;
   width: 70vw;
   float: right;
+  margin-right: 30px;
 }
 
 .edit input {
   margin-bottom: 15px;
+}
+
+.edit a {
+  text-decoration: none;
+  color: black;
+}
+
+.edit label, .inputbutton {
+  margin-top: 15px;
 }
 
 .addbutton {
@@ -163,4 +172,28 @@ header img {
 .addbutton a {
   text-decoration: none;
   color: black;
+}
+
+.author_book_container li {
+  list-style: none;
+}
+
+button, .inputbutton {
+  background-color: white;
+  border: 2px solid rgb(150, 37, 34);
+  border-radius: 5px;
+  border-style: ridge;
+}
+
+button:hover, .inputbutton:hover {
+  background: rgb(150, 37, 34);
+  color: white;
+}
+
+.name {
+  color: rgb(150, 37, 34);
+}
+
+.name:hover {
+  color: red;
 }
